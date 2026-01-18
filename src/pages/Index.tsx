@@ -42,12 +42,14 @@ const Index = () => {
             <motion.img
               src={heroImage}
               alt="Премиальный интерьер с дверью Garmony"
-              className="w-full h-[120%] object-cover opacity-60"
+              className="w-full h-[120%] object-cover"
               initial={{ scale: 1.1 }}
               animate={{ scale: isPreloaderComplete ? 1 : 1.1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
+            {/* Subtle vignette for text readability - keeps image quality */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20" />
           </div>
 
           {/* Content */}
