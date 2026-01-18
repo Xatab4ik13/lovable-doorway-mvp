@@ -148,36 +148,59 @@ const Index = () => {
         <div className="h-32 md:h-48 bg-gradient-to-b from-background to-white" />
 
         {/* Catalog Section - White Background */}
-        <section id="collections" className="relative pb-20 bg-white">
-          {/* Text */}
+        <section id="collections" className="relative pb-20 bg-white overflow-hidden">
+          {/* Text with staggered animation */}
           <motion.div 
-            className="text-center mb-12 px-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            className="text-center mb-16 px-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-sans font-light tracking-[0.3em] uppercase text-charcoal">
+            <motion.h2 
+              className="text-3xl md:text-5xl lg:text-6xl font-sans font-light tracking-[0.3em] uppercase text-charcoal"
+              initial={{ opacity: 0, y: 30, letterSpacing: "0.5em" }}
+              whileInView={{ opacity: 1, y: 0, letterSpacing: "0.3em" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
               Откройте
-            </h2>
-            <p className="mt-4 text-base md:text-lg text-charcoal/60 font-light tracking-[0.2em] uppercase">
+            </motion.h2>
+            <motion.p 
+              className="mt-4 text-base md:text-lg text-charcoal/60 font-light tracking-[0.2em] uppercase"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               для себя новый каталог
-            </p>
-            <div className="mt-6 w-16 h-px bg-accent mx-auto" />
+            </motion.p>
+            <motion.div 
+              className="mt-6 h-px bg-accent mx-auto"
+              initial={{ width: 0 }}
+              whileInView={{ width: 64 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            />
           </motion.div>
 
-          {/* Catalog image - natural size, centered */}
+          {/* Catalog image with scale and fade animation */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
             className="flex justify-center px-6"
+            initial={{ opacity: 0, scale: 0.9, y: 60 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ 
+              duration: 1.2, 
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
-            <img
+            <motion.img
               src={catalogMockup}
               alt="Каталог Garmony — коллекции дверей премиум-класса"
               className="max-w-full h-auto"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.6 }}
             />
           </motion.div>
         </section>
