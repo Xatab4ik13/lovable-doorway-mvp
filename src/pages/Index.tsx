@@ -102,7 +102,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
             >
               <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4 group-hover:text-accent transition-colors duration-300">
-                Коллекции
+                Каталог
               </span>
               <div className="w-px h-12 bg-gradient-to-b from-accent to-transparent group-hover:h-16 transition-all duration-300" />
             </motion.a>
