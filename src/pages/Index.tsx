@@ -152,18 +152,14 @@ const Index = () => {
           </motion.div>
         </section>
 
-        {/* Animated Gradient Transition */}
-        <div ref={transitionRef} className="h-32 md:h-48 relative">
-          {/* Base dark background */}
-          <div className="absolute inset-0 bg-background" />
-          
-          {/* Animated white overlay that fades in on scroll */}
+        {/* Gold Line Transition */}
+        <div className="relative">
           <motion.div 
-            className="absolute inset-0"
-            style={{ 
-              opacity: transitionOpacity,
-              background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.5) 40%, white 100%)'
-            }}
+            className="h-px w-full bg-accent"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           />
         </div>
 
