@@ -144,8 +144,15 @@ const Index = () => {
           </motion.div>
         </section>
 
-        {/* Gradient Transition */}
-        <div className="h-32 md:h-48 bg-gradient-to-b from-background to-white" />
+        {/* Smooth Gradient Transition */}
+        <div className="h-64 md:h-96 relative">
+          <div className="absolute inset-0 bg-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white opacity-100" 
+               style={{ 
+                 background: 'linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(var(--background)) 10%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0.9) 85%, white 100%)' 
+               }} 
+          />
+        </div>
 
         {/* Catalog Section - White Background */}
         <section id="collections" className="relative pb-20 bg-white overflow-hidden">
