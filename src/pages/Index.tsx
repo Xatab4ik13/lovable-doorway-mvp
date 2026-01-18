@@ -153,7 +153,7 @@ const Index = () => {
         </section>
 
         {/* Animated Gradient Transition */}
-        <div ref={transitionRef} className="h-[50vh] md:h-[70vh] relative">
+        <div ref={transitionRef} className="h-32 md:h-48 relative">
           {/* Base dark background */}
           <div className="absolute inset-0 bg-background" />
           
@@ -162,15 +162,7 @@ const Index = () => {
             className="absolute inset-0"
             style={{ 
               opacity: transitionOpacity,
-              background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.85) 60%, white 80%, white 100%)'
-            }}
-          />
-          
-          {/* Soft blur overlay for smoother blend */}
-          <div 
-            className="absolute inset-0 backdrop-blur-[1px]"
-            style={{
-              background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(255,255,255,0.2) 100%)'
+              background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.5) 40%, white 100%)'
             }}
           />
         </div>
