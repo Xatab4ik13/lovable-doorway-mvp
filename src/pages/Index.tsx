@@ -47,9 +47,8 @@ const Index = () => {
               animate={{ scale: isPreloaderComplete ? 1 : 1.1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
             />
-            {/* Subtle vignette for text readability - keeps image quality */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20" />
+            {/* Minimal gradient only at bottom for footer transition */}
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
           </div>
 
           {/* Content */}
