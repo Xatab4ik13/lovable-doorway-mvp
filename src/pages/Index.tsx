@@ -144,114 +144,43 @@ const Index = () => {
           </motion.div>
         </section>
 
-        {/* Catalog Section */}
-        <section id="collections" className="py-24 md:py-40 px-6 md:px-12 relative overflow-hidden">
-          {/* Background decorative elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-          </div>
-
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Text Content */}
+        {/* Catalog Section - Full Width */}
+        <section id="collections" className="relative flex items-center justify-center min-h-screen py-20">
+          {/* Full width catalog image */}
+          <div className="w-full max-w-5xl mx-auto px-6">
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Text overlay */}
               <motion.div 
-                className="order-2 lg:order-1"
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <span className="text-xs tracking-[0.3em] uppercase text-accent">
-                  Каталог продукции
-                </span>
-                <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-wide leading-tight">
-                  Откройте мир
-                  <br />
-                  <span className="text-accent">безупречного</span>
-                  <br />
-                  дизайна
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-light tracking-wide leading-tight">
+                  Откройте
                 </h2>
-                <div className="mt-8 w-20 h-px bg-accent" />
-                <p className="mt-8 text-muted-foreground font-light leading-relaxed max-w-md text-base md:text-lg">
-                  Познакомьтесь с нашими эксклюзивными коллекциями дверей. 
-                  Каждая модель — это сочетание инновационных технологий и 
-                  безупречного мастерства.
+                <p className="mt-4 text-lg md:text-xl text-muted-foreground font-light tracking-wider">
+                  для себя новый каталог
                 </p>
-
-                {/* Features */}
-                <div className="mt-10 grid grid-cols-2 gap-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <span className="text-sm text-muted-foreground">6 уникальных коллекций</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <span className="text-sm text-muted-foreground">100+ моделей</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <span className="text-sm text-muted-foreground">Премиум материалы</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <span className="text-sm text-muted-foreground">Гарантия качества</span>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <motion.button
-                  className="mt-12 group relative px-10 py-4 border border-accent text-accent hover:bg-accent hover:text-background transition-all duration-500 overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className="relative z-10 text-sm tracking-[0.2em] uppercase font-light">
-                    Смотреть каталог
-                  </span>
-                </motion.button>
+                <div className="mt-6 w-16 h-px bg-accent mx-auto" />
               </motion.div>
 
-              {/* Catalog Image */}
-              <motion.div 
-                className="order-1 lg:order-2 relative"
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {/* Decorative frame */}
-                <div className="absolute -inset-4 md:-inset-8 border border-accent/20 -z-10" />
-                <div className="absolute -inset-8 md:-inset-16 border border-accent/10 -z-10" />
-                
-                {/* Image with premium shadow */}
-                <motion.div
-                  className="relative"
-                  whileHover={{ y: -10 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <img
-                    src={catalogMockup}
-                    alt="Каталог Garmony — коллекции дверей премиум-класса"
-                    className="w-full h-auto shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]"
-                  />
-                  
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
-                </motion.div>
-
-                {/* Floating badge */}
-                <motion.div 
-                  className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 bg-background border border-accent/30 px-6 py-4 shadow-2xl"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  <span className="text-2xl md:text-3xl font-serif text-accent">2025</span>
-                  <p className="text-xs text-muted-foreground tracking-wider mt-1">Новая коллекция</p>
-                </motion.div>
-              </motion.div>
-            </div>
+              {/* Catalog image - full width */}
+              <motion.img
+                src={catalogMockup}
+                alt="Каталог Garmony — коллекции дверей премиум-класса"
+                className="w-full h-auto"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.5 }}
+              />
+            </motion.div>
           </div>
         </section>
 
