@@ -144,8 +144,8 @@ const Index = () => {
           </motion.div>
         </section>
 
-        {/* Catalog Section - Full Width */}
-        <section id="collections" className="relative py-20">
+        {/* Catalog Section - White Background */}
+        <section id="collections" className="relative py-20 bg-white">
           {/* Text */}
           <motion.div 
             className="text-center mb-12 px-6"
@@ -154,27 +154,27 @@ const Index = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-light tracking-wide leading-tight italic">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-light tracking-wide leading-tight italic text-charcoal">
               Откройте
             </h2>
-            <p className="mt-4 text-lg md:text-xl text-muted-foreground font-light tracking-wider">
+            <p className="mt-4 text-lg md:text-xl text-charcoal/60 font-light tracking-wider">
               для себя новый каталог
             </p>
             <div className="mt-6 w-16 h-px bg-accent mx-auto" />
           </motion.div>
 
-          {/* Catalog image - full width edge to edge */}
+          {/* Catalog image - natural size, centered */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="w-full"
+            className="flex justify-center px-6"
           >
             <img
               src={catalogMockup}
               alt="Каталог Garmony — коллекции дверей премиум-класса"
-              className="w-full h-auto"
+              className="max-w-full h-auto"
             />
           </motion.div>
         </section>
