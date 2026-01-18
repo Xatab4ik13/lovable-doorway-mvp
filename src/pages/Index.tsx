@@ -155,7 +155,7 @@ const Index = () => {
         {/* Gold Line Transition */}
         <div className="relative">
           <motion.div 
-            className="h-px w-full bg-accent"
+            className="h-[3px] w-full bg-accent"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -167,7 +167,7 @@ const Index = () => {
         <section id="collections" className="relative pb-20 bg-white overflow-hidden">
           {/* Text with staggered animation */}
           <motion.div 
-            className="text-center mb-16 px-6"
+            className="text-center mb-16 px-6 pt-16 md:pt-24"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-50px" }}
