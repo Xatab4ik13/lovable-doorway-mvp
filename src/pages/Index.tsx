@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Preloader from "@/components/Preloader";
 import logoGarmony from "@/assets/logo-garmony.png";
 import heroImage from "@/assets/hero-interior.jpg";
@@ -8,6 +8,14 @@ import catalogMockup from "@/assets/catalog-mockup.jpg";
 const Index = () => {
   const [isPreloaderComplete, setIsPreloaderComplete] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const transitionRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: transitionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const transitionOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.8, 1]);
 
   useEffect(() => {
     if (!isPreloaderComplete) {
@@ -144,13 +152,26 @@ const Index = () => {
           </motion.div>
         </section>
 
-        {/* Smooth Gradient Transition */}
-        <div className="h-64 md:h-96 relative">
+        {/* Animated Gradient Transition */}
+        <div ref={transitionRef} className="h-[50vh] md:h-[70vh] relative">
+          {/* Base dark background */}
           <div className="absolute inset-0 bg-background" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white opacity-100" 
-               style={{ 
-                 background: 'linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(var(--background)) 10%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0.9) 85%, white 100%)' 
-               }} 
+          
+          {/* Animated white overlay that fades in on scroll */}
+          <motion.div 
+            className="absolute inset-0"
+            style={{ 
+              opacity: transitionOpacity,
+              background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.85) 60%, white 80%, white 100%)'
+            }}
+          />
+          
+          {/* Soft blur overlay for smoother blend */}
+          <div 
+            className="absolute inset-0 backdrop-blur-[1px]"
+            style={{
+              background: 'linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(255,255,255,0.2) 100%)'
+            }}
           />
         </div>
 
