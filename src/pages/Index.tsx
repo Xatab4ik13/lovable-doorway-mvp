@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Preloader from "@/components/Preloader";
-import logoGR from "@/assets/logo-gr.png";
 import logoGarmony from "@/assets/logo-garmony.png";
 import heroImage from "@/assets/hero-interior.jpg";
 
@@ -53,46 +52,29 @@ const Index = () => {
 
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center text-center px-6">
-            {/* Logo GR */}
+            {/* Main Logo - Large */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ 
                 opacity: isPreloaderComplete ? 1 : 0, 
                 y: isPreloaderComplete ? 0 : 30 
               }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-8"
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
               <img
-                src={logoGR}
-                alt="GR"
-                className="h-16 md:h-24 w-auto brightness-0 invert opacity-90"
+                src={logoGarmony}
+                alt="Garmony - Фабрика дверей"
+                className="h-16 md:h-24 lg:h-28 w-auto brightness-0 invert"
               />
             </motion.div>
 
             {/* Decorative Line */}
             <motion.div 
-              className="h-px bg-accent mb-8"
+              className="h-px bg-accent mt-8"
               initial={{ width: 0 }}
-              animate={{ width: isPreloaderComplete ? 96 : 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            />
-
-            {/* Main Logo */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ 
-                opacity: isPreloaderComplete ? 1 : 0, 
-                y: isPreloaderComplete ? 0 : 30 
-              }}
+              animate={{ width: isPreloaderComplete ? 120 : 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <img
-                src={logoGarmony}
-                alt="Garmony - Фабрика дверей"
-                className="h-12 md:h-16 w-auto brightness-0 invert"
-              />
-            </motion.div>
+            />
 
             {/* Tagline */}
             <motion.p 
