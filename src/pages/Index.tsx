@@ -79,7 +79,7 @@ const Index = () => {
 
             {/* Tagline */}
             <motion.p 
-              className="mt-10 text-sm md:text-base tracking-[0.3em] uppercase text-muted-foreground font-light"
+              className="mt-10 text-sm md:text-base tracking-[0.3em] uppercase text-foreground/90 font-light drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ 
                 opacity: isPreloaderComplete ? 1 : 0, 
